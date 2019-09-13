@@ -1,0 +1,35 @@
+# openconnection(destination, source, timeout)
+
+##########################################################
+#### modify the sourceIP address to test the firewall ####
+sourceIP = '127.0.0.8'
+##########################################################
+
+socket = openconnection('127.0.0.1', 12777, sourceIP, 12345, 10)
+
+# sample message to send to firewall where
+# application protocol is DD and port is 20001
+# the remainder of the message is optional
+
+##########################################################
+#### modify message to test firewall ####
+message = 'DD20001helloworld'
+##########################################################
+
+socket.send(message)
+
+# wait for response through communication socket, log if received
+# otherwise log error message
+try:
+  sleep(0.1)
+  response = socket.recv(512)
+  log(response)
+  log('\n')
+except SocketWouldBlockError:
+  pass
+except SocketClosedRemote:
+  log('exception: message not received')
+  log('\n')
+  
+# close communication socket
+socket.close()

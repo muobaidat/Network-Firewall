@@ -15,10 +15,6 @@ Various sources will try to communicate with your network server. Your firewall 
 * Otherwise, do not send back a response, “drop” the communication.
 * In all cases, write the IP address and message sent along with the action taken for a communication attempt to a file, to simulate passing the information to an IDS, whether “Accept”, “Reject”, or “Drop”.
 
-## Attack
-A network server is protected by a firewall that attempts to only respond to certain traffic. You will test this firewall defense with your attack program. The goal of the attack is to get a response from the server that is not in accordance with the rules described above in the Defense section. 
-
-* Each attack program will make one communication attempt to the server. 
 
 ## Assignment Instructions
 
@@ -74,13 +70,6 @@ Note that this program will be running locally, so **all IP addresses used must 
 ### Defense 
 
 Submit one defense program, named firewalldefend_###.r2py, where ### is your assigned 3-digit code.
-
-### Attack
-
-You may select up to 5 defense programs to attack. Submit one attack program for a defense.
-
-Name your submitted attack programs "Firewall_DDD_Attack_###.r2py", where DDD is the number code in the defense program being attacked, and ### is your unique student code.
-
 
 ## Sample Defense Code
 
@@ -149,45 +138,6 @@ while True:
 actionlog.close()
 ```
 
-## Sample Attack Code
-
-``` python
-# openconnection(destination, source, timeout)
-
-##########################################################
-#### modify the sourceIP address to test the firewall ####
-sourceIP = '127.0.0.8'
-##########################################################
-
-socket = openconnection('127.0.0.1', 12777, sourceIP, 12345, 10)
-
-# sample message to send to firewall where
-# application protocol is DD and port is 20001
-# the remainder of the message is optional
-
-##########################################################
-#### modify message to test firewall ####
-message = 'DD20001helloworld'
-##########################################################
-
-socket.send(message)
-
-# wait for response through communication socket, log if received
-# otherwise log error message
-try:
-  sleep(0.1)
-  response = socket.recv(512)
-  log(response)
-  log('\n')
-except SocketWouldBlockError:
-  pass
-except SocketClosedRemote:
-  log('exception: message not received')
-  log('\n')
-  
-# close communication socket
-socket.close()
-```
 
 ### Run code in separate terminal windows
 

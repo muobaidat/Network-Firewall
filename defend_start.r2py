@@ -1,0 +1,62 @@
+'''
+define inspect function that will parse message
+from source and decide whether to send response
+
+this starting definition is not sufficient for the firewall rules
+and needs to be improved as part of the simulation assignment
+'''
+def inspect(ip, unused, sock, actionlog):
+
+  # save received message
+  message = sock.recv(512)
+  
+  # default action
+  action = "DROP"
+
+  #############  UPDATE THIS PART #################
+  
+  # define trusted application protocols
+  trustedaps = ['HT', 'GL']
+
+  # parse application protocol out of message  
+  senderap = message[0:2]
+
+  # if the application is trusted, send back 'Accept' message
+  if senderap in trustedaps:
+    action = 'ACCEPT'
+    sock.send('Accept')
+
+  #################################################
+
+  # write report to file
+  report = ip + ' ' + message + ' ' + action + '\n'
+  actionlog.writeat(report, mycontext['offset'])
+  mycontext['offset'] += len(report)
+  
+  # close communication socket
+  sock.close()
+
+######## END OF INSPECT FUNCTION ###################
+
+# "global" variable for offset in file writing
+mycontext['offset'] = 0
+
+# listen for connection requests coming in
+server = listenforconnection('127.0.0.1', 12777)
+
+########## USE UNIQUE STUDENT CODE ASSIGNED #########
+studentcode = "###"    # replace ### with your code
+
+filename = "firewalllog_" + studentcode;
+actionlog = openfile(filename, True)
+
+# keep checking for connection request
+# if none received, wait and try again
+while True:
+  try:
+    src_ip, unused, src_socket = server.getconnection()
+    inspect(src_ip, unused, src_socket, actionlog)
+  except SocketWouldBlockError:
+    sleep(0.1)
+
+actionlog.close()
