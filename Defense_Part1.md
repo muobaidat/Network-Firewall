@@ -1,6 +1,6 @@
-# SimulationProject
+# Cybersecurity Project
 
-## Firewall Simulation
+## Network Firewall
 In this simulation, your defense program will attempt to implement the rules of the firewall protecting a server so that it only responds to allowed incoming traffic. Your attack program will try to get unallowed traffic through the firewall and get a response from the server.  
 
 There will be a set of TRUSTED source IP addresses and a separate set of SEMI-TRUSTED source IP addresses. Any source IP that is not TRUSTED or SEMI-TRUSTED is UNTRUSTED.  But just because a source is TRUSTED or SEMI-TRUSTED does not mean all traffic from it is allowed. Traffic will only be allowed from certain ports and for certain application protocols. 
