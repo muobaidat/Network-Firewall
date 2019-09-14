@@ -1,7 +1,7 @@
-# SimulationProject
+# Cybersecurity Project
 
-## Firewall Simulation
-In this simulation, your attack program will attempt to bypass the firewall protecting a server, to get unallowed traffic through the firewall and get a response from the server.  
+## Network Firewall 
+In this project, your attack program will attempt to bypass the network firewall protecting a server, to get unallowed traffic through the firewall and get a response from the server.  
 
 * Each attack program will make one communication attempt to the server. 
 
@@ -71,7 +71,7 @@ Note that this program will be running locally, so **all IP addresses used must 
 
 You may select up to 5 defense programs to attack. Submit one attack program for a defense.
 
-Name your submitted attack programs "Firewall_DDD_Attack_###.r2py", where DDD is the number code in the defense program being attacked, and ### is your unique student code.
+Name your submitted attack programs "Firewall_DDD_Attack_###.r2py", where DDD is the 3-digit student code in the defense program being attacked, and ### is your unique 3-digit student code.
 
 
 ## Sample Attack Code
