@@ -69,7 +69,7 @@ Note that this program will be running locally, so **all IP addresses used must 
 ## Submission
 ### Defense 
 
-Submit one defense program, named firewalldefend_###.r2py, where ### is your assigned 3-digit code.
+Submit one defense program, named firewalldefend_###.r2py, where ### is your assigned 3-digit student code.
 
 ## Sample Defense Code
 
@@ -121,7 +121,7 @@ mycontext['offset'] = 0
 server = listenforconnection('127.0.0.1', 12777)
 
 ########## USE UNIQUE STUDENT CODE ASSIGNED #########
-studentcode = "###"    # replace ### with your code
+studentcode = "###"    # replace ### with your 3-digit student code
 
 filename = "firewalllog_" + studentcode;
 actionlog = openfile(filename, True)
