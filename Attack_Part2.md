@@ -76,24 +76,25 @@ Name your submitted attack programs "Firewall_DDD_Attack_###.r2py", where DDD is
 
 ## Sample Attack Code
 
+[attack_start.r2py] (attack_start.r2py)
 ``` python
 # openconnection(destination, source, timeout)
 
-##########################################################
-#### modify the sourceIP address to test the firewall ####
-sourceIP = '127.0.0.8'
-##########################################################
+###########      MODIFY MESSAGE HERE      ################
 
-socket = openconnection('127.0.0.1', 12777, sourceIP, 12345, 10)
+#### modify the sourceIP address to test the firewall
+sourceIP = '127.0.0.8'
 
 # sample message to send to firewall where
 # application protocol is DD and port is 20001
 # the remainder of the message is optional
 
-##########################################################
-#### modify message to test firewall ####
+#### modify message to test firewall
 message = 'DD20001helloworld'
-##########################################################
+
+###############       END MODIFY       ###################
+
+socket = openconnection('127.0.0.1', 12777, sourceIP, 12345, 10)
 
 socket.send(message)
 
@@ -121,4 +122,5 @@ python repy.py restrictions.test defend.r2py
 
 python repy.py restrictions.test attack.r2py
 ```
+[restrictions.test](restrictions.test)  
 The restrictions.test file provided sets values of parameters of resources and functionality allowed. 
