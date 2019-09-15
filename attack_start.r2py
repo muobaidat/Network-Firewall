@@ -1,20 +1,20 @@
 # openconnection(destination, source, timeout)
 
-##########################################################
+###############       MODIFY HERE      ###################
+
 #### modify the sourceIP address to test the firewall ####
 sourceIP = '127.0.0.8'
-##########################################################
-
-socket = openconnection('127.0.0.1', 12777, sourceIP, 12345, 10)
 
 # sample message to send to firewall where
 # application protocol is DD and port is 20001
 # the remainder of the message is optional
 
-##########################################################
 #### modify message to test firewall ####
 message = 'DD20001helloworld'
+
 ##########################################################
+
+socket = openconnection('127.0.0.1', 12777, sourceIP, 12345, 10)
 
 socket.send(message)
 
