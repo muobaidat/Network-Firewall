@@ -76,7 +76,7 @@ Name your submitted attack programs "Firewall_DDD_Attack_###.r2py", where DDD is
 
 ## Sample Attack Code
 
-[attack_start.r2py] (attack_start.r2py)
+[attack_start.r2py](attack_start.r2py)  
 ``` python
 # openconnection(destination, source, timeout)
 
