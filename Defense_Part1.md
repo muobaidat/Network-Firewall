@@ -150,5 +150,5 @@ python repy.py restrictions.test defend.r2py
 
 python repy.py restrictions.test attack.r2py
 ```
-[restrictions.test](restrictions.test)
+[restrictions.test](restrictions.test)  
 The restrictions.test file provided sets values of parameters of resources and functionality allowed. 
