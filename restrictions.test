@@ -13,45 +13,38 @@ resource loopsend 1000000
 resource looprecv 1000000
 resource lograte 30000
 resource random 100
-resource messport 12345   # use for getting an NTP update
+resource messport 12345
 resource messport 12346
 resource connport 12345
 resource connport 12777
 
-
 call gethostbyname_ex allow
-call sendmess allow 	# the local port type
-call stopcomm allow 			# it doesn't make sense to restrict
-call recvmess allow 	# Allow listening on this port
-call openconn allow 	# allow connections to this port
-call waitforconn allow 	# allow listening on this port
-call listenforconnection allow # allow
-call openconnection allow # allow
-call socket.close allow 		# let's not restrict
-call socket.send allow 			# let's not restrict
-call socket.recv allow 			# let's not restrict
+call sendmess allow 	
+call stopcomm allow 			
+call recvmess allow 	
+call openconn allow 	
+call waitforconn allow 	
+call listenforconnection allow 
+call openconnection allow 
+call socket.close allow 		
+call socket.send allow 			
+call socket.recv allow 			
 # open and file.__init__ both have built in restrictions...
-call open allow 	# can write to junk_test.out
-call file.__init__ allow # can write to junk_test.out
-call file.close allow 			# shouldn't restrict
-call file.flush allow 			# they are free to use
-call file.next allow 			# free to use as well...
-call file.read allow 			# allow read
-call file.readline allow 		# shouldn't restrict
-call file.readlines allow 		# shouldn't restrict
-call file.seek allow 			# seek doesn't restrict
-call file.write allow 			# shouldn't restrict (open restricts)
-call file.writelines allow 		# shouldn't restrict (open restricts)
-call sleep allow			# harmless
-call settimer allow			# we can't really do anything smart
-call canceltimer allow			# should be okay
-call exitall allow			# should be harmless 
-
+call open allow 	
+call file.__init__ allow 
+call file.close allow 			
+call file.flush allow 			
+call file.next allow 			
+call file.read allow 			
+call file.readline allow 		
+call file.readlines allow 		
+call file.seek allow 			
+call file.write allow 			
+call file.writelines allow 		
+call sleep allow			
+call settimer allow			
+call canceltimer allow			
+call exitall allow			
 call log.write allow
 call log.writelines allow
-call getmyip allow			# They can get the external IP address
-call listdir allow			# They can list the files they created
-call removefile allow			# They can remove the files they create
-call randomfloat allow			# can get random numbers
-call getruntime allow			# can get the elapsed time
-call getlock allow			# can get a mutex
+call getmyip allow			
