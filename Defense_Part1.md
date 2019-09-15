@@ -28,7 +28,7 @@ If you’re familiar with Python, RepyV2 is similar, but has a few differences t
 https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md
 
 ### Message format for communication attempt
-The attack programs will include the simulated application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
+The attack programs will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
 
 An example message with an application protocol of HT and port of 87654 is below. 
 
@@ -36,12 +36,12 @@ HT87654HELLO0000
 
 The defense programs will get the source IP from the connection request, and parse the protocol and port in the message to determine the appropriate (if any) response.
 
-A sample, though insufficient, program for your defense is provided. You will need to modify the code to implemenent all the firewall rules.
+A sample, though insufficient, program for your defense is provided. You will need to modify the code to implement all the firewall rules. Also modify the given code to use the 3-digit student code you have been assigned.
 
 A sample attack program is also provided to test against your defense code prior to submission.
 
 ## Trust Definitions
-In this simulation, the following values represent trusted sources.
+In this project, the following values represent trusted sources.
 
 ### TRUSTED
 
@@ -51,7 +51,7 @@ In this simulation, the following values represent trusted sources.
 | Port |	20001, 28724, 39845  |  
 | AP	|  HT, GL  |  
 
-In this simulation, the following values represent semi-trusted sources.
+In this project, the following values represent semi-trusted sources.
 
 ### SEMI-TRUSTED
 
@@ -71,15 +71,18 @@ Note that this program will be running locally, so **all IP addresses used must 
 
 Submit one defense program, named firewalldefend_###.r2py, where ### is your assigned 3-digit student code.
 
+Be sure that you have modified the defense program to include your 3-digit student code as part of the firewall logfile that is created when the program runs.
+
 ## Sample Defense Code
 
+[defense_start.r2py](defense_start.r2py)
 ``` python
 '''
 define inspect function that will parse message
 from source and decide whether to send response
 
-this starting definition is not sufficient for the firewall rules
-and needs to be improved as part of the simulation assignment
+this starting definition is not sufficient for the firewall 
+defense and needs to be improved as part of this project
 '''
 def inspect(ip, unused, sock, actionlog):
 
@@ -89,7 +92,7 @@ def inspect(ip, unused, sock, actionlog):
   # default action
   action = "DROP"
 
-  #############  UPDATE THIS PART #################
+  ########   MODIFY FIREWALL DEFENSE RULES HERE    ########
   
   # define trusted application protocols
   trustedaps = ['HT', 'GL']
@@ -102,7 +105,7 @@ def inspect(ip, unused, sock, actionlog):
     action = 'ACCEPT'
     sock.send('Accept')
 
-  #################################################
+  ########    END MODIFY FIREWALL DEFENSE RULES    ########
 
   # write report to file
   report = ip + ' ' + message + ' ' + action + '\n'
@@ -120,7 +123,7 @@ mycontext['offset'] = 0
 # listen for connection requests coming in
 server = listenforconnection('127.0.0.1', 12777)
 
-########## USE UNIQUE STUDENT CODE ASSIGNED #########
+####### MODIFY 3-DIGIT STUDENT CODE ASSIGNED #######
 studentcode = "###"    # replace ### with your 3-digit student code
 
 filename = "firewalllog_" + studentcode;
@@ -135,6 +138,7 @@ while True:
   except SocketWouldBlockError:
     sleep(0.1)
 
+# close file
 actionlog.close()
 ```
 
@@ -146,4 +150,5 @@ python repy.py restrictions.test defend.r2py
 
 python repy.py restrictions.test attack.r2py
 ```
+[restrictions.test](restrictions.test)
 The restrictions.test file provided sets values of parameters of resources and functionality allowed. 
