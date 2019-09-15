@@ -2,8 +2,8 @@
 define inspect function that will parse message
 from source and decide whether to send response
 
-this starting definition is not sufficient for the firewall rules
-and needs to be improved as part of the simulation assignment
+this starting definition is not sufficient for the firewall 
+defense and needs to be improved as part of this project
 '''
 def inspect(ip, unused, sock, actionlog):
 
@@ -13,7 +13,7 @@ def inspect(ip, unused, sock, actionlog):
   # default action
   action = "DROP"
 
-  #############  UPDATE THIS PART #################
+  ########   MODIFY FIREWALL DEFENSE RULES HERE    ########
   
   # define trusted application protocols
   trustedaps = ['HT', 'GL']
@@ -26,7 +26,7 @@ def inspect(ip, unused, sock, actionlog):
     action = 'ACCEPT'
     sock.send('Accept')
 
-  #################################################
+  ########    END MODIFY FIREWALL DEFENSE RULES    ########
 
   # write report to file
   report = ip + ' ' + message + ' ' + action + '\n'
@@ -44,8 +44,8 @@ mycontext['offset'] = 0
 # listen for connection requests coming in
 server = listenforconnection('127.0.0.1', 12777)
 
-########## USE UNIQUE STUDENT CODE ASSIGNED #########
-studentcode = "###"    # replace ### with your code
+####### MODIFY 3-DIGIT STUDENT CODE ASSIGNED #######
+studentcode = "###"    # replace ### with your 3-digit student code
 
 filename = "firewalllog_" + studentcode;
 actionlog = openfile(filename, True)
@@ -59,4 +59,5 @@ while True:
   except SocketWouldBlockError:
     sleep(0.1)
 
+# close file
 actionlog.close()
