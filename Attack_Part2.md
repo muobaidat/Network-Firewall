@@ -33,14 +33,14 @@ If you’re familiar with Python, RepyV2 is similar, but has a few differences t
 https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md
 
 ### Message format for communication attempt
-The attack programs will include the simulated application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
+The attack programs will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
 
 An example message with an application protocol of HT and port of 87654 is below. 
 
 HT87654HELLO0000
 
 ## Trust Definitions
-In this simulation, the following values represent trusted sources.
+In this project, the following values represent trusted sources.
 
 ### TRUSTED
 
@@ -50,7 +50,7 @@ In this simulation, the following values represent trusted sources.
 | Port |	20001, 28724, 39845  |  
 | AP	|  HT, GL  |  
 
-In this simulation, the following values represent semi-trusted sources.
+In this project, the following values represent semi-trusted sources.
 
 ### SEMI-TRUSTED
 
