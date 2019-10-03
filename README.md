@@ -22,14 +22,17 @@ A network server is protected by a firewall that attempts to only respond to cer
 
 ## Assignment Instructions
 
-### Installing and using Repy v2 (Restricted Python)
-Defense and Attack Programs will be written in repy v2 (Restricted Python). Installation and usage instructions for RepyV2 are here:  
+### Using Repy v2 (Restricted Python)
+Defense and Attack Programs will be written in repy v2 (Restricted Python). Usage instructions for RepyV2 are here:  
 
 https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md
 
 If you’re familiar with Python, RepyV2 is similar, but has a few differences that are explained here:
 
 https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md
+
+### Virtual Machine  
+A VirtualBox machine with Repy v2 installed will be provided.
 
 ### Message format for communication attempt
 The attack programs will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
