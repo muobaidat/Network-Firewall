@@ -45,7 +45,7 @@ mycontext['offset'] = 0
 server = listenforconnection('127.0.0.1', 12777)
 
 ####### MODIFY 3-DIGIT STUDENT CODE ASSIGNED #######
-studentcode = "###"    # replace ### with your 3-digit student code
+studentcode = "___"    # replace ___ with your 3-digit student code
 
 filename = "firewalllog_" + studentcode;
 actionlog = openfile(filename, True)
