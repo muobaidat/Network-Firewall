@@ -1,7 +1,7 @@
 # Cybersecurity Project
 
 ## Network Firewall
-In this project, your firewall defense program will attempt to implement the rules of the firewall protecting a server so that it only responds to allowed incoming traffic. Your attack program will try to get unallowed traffic through the firewall and get a response from the server.  
+In this project, your firewall defense program will attempt to implement the rules of the firewall protecting a server so that it only responds to allowed incoming traffic. 
 
 There will be a set of TRUSTED source IP addresses and a separate set of SEMI-TRUSTED source IP addresses. Any source IP that is not TRUSTED or SEMI-TRUSTED is UNTRUSTED.  But just because a source is TRUSTED or SEMI-TRUSTED does not mean all traffic from it is allowed. Traffic will only be allowed from certain ports and for certain application protocols. 
 
@@ -19,7 +19,7 @@ Various sources will try to communicate with your network server. Your firewall 
 ## Assignment Instructions
 
 ### Using Repy v2 (Restricted Python)
-Defense and Attack Programs will be written in repy v2 (Restricted Python). Usage instructions for RepyV2 are here:  
+Defense Programs will be written in repy v2 (Restricted Python). Usage instructions for RepyV2 are here:  
 
 https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md
 
@@ -31,7 +31,7 @@ https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md
 A VirtualBox machine with Repy v2 installed will be provided.
 
 ### Message format for communication attempt
-The attack programs will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
+The communication attempts will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
 
 An example message with an application protocol of HT and port of 87654 is below. 
 
@@ -41,7 +41,7 @@ The defense programs will get the source IP from the connection request, and par
 
 A sample, though insufficient, program for your defense is provided. You will need to modify the code to implement all the firewall rules. Also modify the given code to use the 3-digit student code you have been assigned.
 
-A sample attack program is also provided to test against your defense code prior to submission.
+A sample test program is also provided to test against your defense code prior to submission.
 
 ## Trust Definitions
 In this project, the following values represent trusted sources.
@@ -127,7 +127,7 @@ mycontext['offset'] = 0
 server = listenforconnection('127.0.0.1', 12777)
 
 ####### MODIFY 3-DIGIT STUDENT CODE ASSIGNED #######
-studentcode = "###"    # replace ### with your 3-digit student code
+studentcode = "---"    # replace --- with your 3-digit student code
 
 filename = "firewalllog_" + studentcode;
 actionlog = openfile(filename, True)
@@ -151,7 +151,7 @@ actionlog.close()
 ``` python
 python repy.py restrictions.test defend.r2py
 
-python repy.py restrictions.test attack.r2py
+python repy.py restrictions.test test.r2py
 ```
 [restrictions.test](restrictions.test)  
 The restrictions.test file provided sets values of parameters of resources and functionality allowed. 
