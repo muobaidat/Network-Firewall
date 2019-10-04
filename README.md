@@ -1,7 +1,7 @@
 # Cybersecurity Project
 
 ## Network Firewall
-In this project, your firewall defense program will attempt to implement the rules of the firewall protecting a server so that it only responds to allowed incoming traffic. Your attack program will try to get unallowed traffic through the firewall and get a response from the server.    
+In the first part of this project, your firewall defense program will attempt to implement the rules of the firewall protecting a server so that it only responds to allowed incoming traffic.  
 
 There will be a set of TRUSTED source IP addresses and a separate set of SEMI-TRUSTED source IP addresses. Any source IP that is not TRUSTED or SEMI-TRUSTED is UNTRUSTED.  But just because a source is TRUSTED or SEMI-TRUSTED does not mean all traffic from it is allowed. Traffic will only be allowed from certain ports and for certain application protocols. 
 
@@ -15,15 +15,10 @@ Various sources will try to communicate with your network server. Your firewall 
 * Otherwise, do not send back a response, “drop” the communication.
 * In all cases, write the IP address and message sent along with the action taken for a communication attempt to a file, to simulate passing the information to an IDS, whether “Accept”, “Reject”, or “Drop”.
 
-## Attack
-A network server is protected by a firewall that attempts to only respond to certain traffic. You will test this firewall defense with your attack program. The goal of the attack is to get a response from the server that is not in accordance with the rules described above in the Defense section. 
-
-* Each attack program will make one communication attempt to the server. 
-
 ## Assignment Instructions
 
 ### Using Repy v2 (Restricted Python)
-Defense and Attack Programs will be written in repy v2 (Restricted Python). Usage instructions for RepyV2 are here:  
+Defense Programs will be written in repy v2 (Restricted Python). Usage instructions for RepyV2 are here:  
 
 https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md
 
@@ -35,7 +30,7 @@ https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md
 A VirtualBox machine with Repy v2 installed will be provided.
 
 ### Message format for communication attempt
-The attack programs will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
+The communication attempts will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
 
 An example message with an application protocol of HT and port of 87654 is below. 
 
@@ -45,7 +40,7 @@ The defense programs will get the source IP from the connection request, and par
 
 A sample, though insufficient, program for your defense is provided. You will need to modify the code to implement all the firewall rules. Also modify the given code to use the 3-digit student code you have been assigned.
 
-A sample attack program is also provided to test against your defense code prior to submission.
+A sample test program is also provided to test against your defense code prior to submission.
 
 ## Trust Definitions
 In this project, the following values represent trusted sources.
