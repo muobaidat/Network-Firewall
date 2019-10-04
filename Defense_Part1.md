@@ -149,7 +149,8 @@ actionlog.close()
 ### Run code in separate terminal windows
 
 ``` python
-python repy.py restrictions.test defend.r2py
+# replace ### in filename with your 3-digit student code
+python repy.py restrictions.test firewalldefend_###.r2py
 
 python repy.py restrictions.test test.r2py
 ```
