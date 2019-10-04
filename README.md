@@ -72,16 +72,3 @@ In this project, the following values represent semi-trusted sources.
 Anything not specifically enumerated above.  
 
 Note that this program will be running locally, so **all IP addresses used must be in the 127 network.**
-
-## Submission
-### Defense 
-
-Submit one defense program, named firewalldefend_###.r2py, where ### is your assigned 3-digit student code.
-
-Be sure that you have modified the defense program to include your 3-digit student code as part of the firewall logfile that is created.
-
-### Attack
-
-You may select up to 5 defense programs to attack. Submit one attack program for a defense.
-
-Name your submitted attack programs "Firewall_DDD_Attack_###.r2py", where DDD is the number code in the defense program being attacked, and ### is your unique student code.
