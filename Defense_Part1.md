@@ -28,7 +28,7 @@ If you’re familiar with Python, RepyV2 is similar, but has a few differences t
 https://github.com/SeattleTestbed/docs/blob/master/Programming/PythonVsRepyV2.md
 
 ### Virtual Machine  
-A VirtualBox machine with Repy v2 installed will be provided.
+A VirtualBox machine with Repy v2 installed will be provided. There will be a repy_v2 folder under home.
 
 ### Message format for communication attempt
 The communication attempts will include an application protocol in the first 2 characters of the message and a source port number in the following 5 characters. Any further characters in the message are optional. 
