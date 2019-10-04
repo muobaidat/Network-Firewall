@@ -1,6 +1,6 @@
 # openconnection(destination, source, timeout)
 
-###########      MODIFY MESSAGE HERE      ################
+############     MODIFY MESSAGE HERE     ################
 
 #### modify the sourceIP address to test the firewall
 sourceIP = '127.0.0.8'
