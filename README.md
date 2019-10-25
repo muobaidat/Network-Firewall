@@ -3,6 +3,10 @@
 ## Network Firewall
 In the first part of this project, your firewall defense program will attempt to implement the rules of the firewall protecting a server so that it only responds to allowed incoming traffic.  
 
+In the second part of this project, your attack program will attempt to bypass the network firewall protecting a server, to get unallowed traffic through the firewall and get a response from the server.  
+
+* Each attack program will make one communication attempt to the server. 
+
 There will be a set of TRUSTED source IP addresses and a separate set of SEMI-TRUSTED source IP addresses. Any source IP that is not TRUSTED or SEMI-TRUSTED is UNTRUSTED.  But just because a source is TRUSTED or SEMI-TRUSTED does not mean all traffic from it is allowed. Traffic will only be allowed from certain ports and for certain application protocols. 
 
 ## Defense
@@ -15,10 +19,13 @@ Various sources will try to communicate with your network server. Your firewall 
 * Otherwise, do not send back a response, “drop” the communication.
 * In all cases, write the IP address and message sent along with the action taken for a communication attempt to a file, to simulate passing the information to an IDS, whether “Accept”, “Reject”, or “Drop”.
 
+## Attack
+A network server is protected by a firewall that attempts to only respond to certain traffic. You will test this firewall defense with your attack program. The goal of the attack is to get a response from the server that is not in accordance with the rules described above in the Defense rules section. 
+
 ## Assignment Instructions
 
 ### Using Repy v2 (Restricted Python)
-Defense Programs will be written in repy v2 (Restricted Python). Usage instructions for RepyV2 are here:  
+Defense and Attack Programs will be written in repy v2 (Restricted Python). Usage instructions for RepyV2 are here:  
 
 https://github.com/SeattleTestbed/docs/blob/master/Programming/RepyV2Tutorial.md
 
