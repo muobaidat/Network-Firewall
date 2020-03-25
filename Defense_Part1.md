@@ -78,7 +78,7 @@ Be sure that you have modified the defense program to include your 3-digit stude
 
 ## Sample Defense Code
 
-[defense_start.r2py](defense_start.r2py)
+[defend_start.r2py](defend_start.r2py)
 ``` python
 '''
 define inspect function that will parse message
